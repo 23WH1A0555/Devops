@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Public Grievance Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #2e7d32;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    input[type="file"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .radio-group,
+    .checkbox-group {
+      display: flex;
+      gap: 15px;
+      margin-top: 5px;
+    }
+
+    .section-title {
+      margin-top: 30px;
+      font-size: 18px;
+      color: #444;
+    }
+
+    button {
+      margin-top: 25px;
+      width: 100%;
+      background-color: #2e7d32;
+      color: white;
+      font-size: 16px;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #1b5e20;
+    }
+
+    .optional {
+      font-weight: normal;
+      font-style: italic;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>✅ Public Grievance Registration Form</h2>
+    <form>
+      <!-- Personal Details -->
+      <label for="name">Name</label>
+      <input type="text" id="name" required>
+
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" required>
+
+      <label for="address">Address</label>
+      <input type="text" id="address">
+
+      <label for="city">City</label>
+      <select id="city" required>
+        <option disabled selected>Select your city</option>
+        <option>Hyderabad</option>
+        <option>Chennai</option>
+        <option>Bangalore</option>
+        <option>Other</option>
+      </select>
+
+      <label for="state">State</label>
+      <select id="state" required>
+        <option disabled selected>Select your state</option>
+        <option>Telangana</option>
+        <option>Tamil Nadu</option>
+        <option>Karnataka</option>
+        <option>Other</option>
+      </select>
+
+      <label for="pincode">Pincode</label>
+      <input type="text" id="pincode" maxlength="6" required>
+
+      <!-- Complaint Details -->
+      <label for="complaintType">Type of Complaint</label>
+      <select id="complaintType" required>
+        <option disabled selected>Select type</option>
+        <option>Road</option>
+        <option>Drainage</option>
+        <option>Garbage</option>
+        <option>Electricity</option>
+        <option>Others</option>
+      </select>
+
+      <label for="location">Location of the Issue</label>
+      <input type="text" id="location" placeholder="Enter address or pin on map" required>
+
+      <label for="description">Description of Complaint</label>
+      <textarea id="description" rows="4" required></textarea>
+
+      <label for="supportImage">Upload Supporting Image <span class="optional">(Optional)</span></label>
+      <input type="file" id="supportImage">
+
+      <label for="issueSince">Issue Since (Date)</label>
+      <input type="date" id="issueSince" required>
+
+      <label>Is it Repeated?</label>
+      <div class="radio-group">
+        <label><input type="radio" name="repeated" value="Yes" required> Yes</label>
+        <label><input type="radio" name="repeated" value="No"> No</label>
+      </div>
+
+      <label>Have you complained before?</label>
+      <div class="radio-group">
+        <label><input type="radio" name="complainedBefore" value="Yes" required> Yes</label>
+        <label><input type="radio" name="complainedBefore" value="No"> No</label>
+      </div>
+
+      <label for="referenceId">Reference Complaint ID <span class="optional">(if applicable)</span></label>
+      <input type="text" id="referenceId">
+
+      <label for="communication">Preferred Communication Mode</label>
+      <select id="communication">
+        <option disabled selected>Select mode</option>
+        <option>Email</option>
+        <option>Phone</option>
+        <option>SMS</option>
+      </select>
+
+      <label>Available for Inspection?</label>
+      <div class="radio-group">
+        <label><input type="radio" name="inspection" value="Yes" required> Yes</label>
+        <label><input type="radio" name="inspection" value="No"> No</label>
+      </div>
+
+      <label>Consent to Publish Complaint</label>
+      <div class="radio-group">
+        <label><input type="radio" name="consent" value="Yes" required> Yes</label>
+        <label><input type="radio" name="consent" value="No"> No</label>
+      </div>
+
+      <label for="emergency">Emergency Level</label>
+      <select id="emergency" required>
+        <option disabled selected>Select level</option>
+        <option>Low</option>
+        <option>Medium</option>
+        <option>High</option>
+      </select>
+
+      <label for="landmark">Nearby Landmark</label>
+      <input type="text" id="landmark">
+
+      <label for="idProof">ID Proof Upload</label>
+      <input type="file" id="idProof" required>
+
+      <label for="signature">Signature <span class="optional">(Digital optional)</span></label>
+      <input type="text" id="signature" placeholder="Type your name">
+
+      <label for="comments">Comments <span class="optional">(Optional)</span></label>
+      <textarea id="comments" rows="3"></textarea>
+
+      <button type="submit">Submit Complaint</button>
+    </form>
+  </div>
+</body>
+</html>
